@@ -41,7 +41,7 @@ export default function About() {
                 Founded on the belief that physical touch and ambient therapy are essential to human well-being, Rosy Relax Spa was created to offer an oasis of calm in the bustling NCR region.
               </p>
               <p>
-                We carefully vet and train our therapists not just in the art of massage, but in the art of hospitality. Our model therapists are beautiful, friendly, and exceptionally skilled at melting away your stress.
+                We carefully vet and train our models not just in the art of massage, but in the art of hospitality. Our models are beautiful, friendly, and exceptionally skilled at melting away your stress.
               </p>
               <p>
                 Whether you need a quick 1-hour escape from your daily routine, or a full-night therapeutic retreat, our personalized services are designed to cater to your specific desires and aches.

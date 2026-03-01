@@ -17,12 +17,12 @@ export const api = {
       },
     }
   },
-  therapists: {
+  models: {
     list: {
       method: 'GET' as const,
-      path: '/api/therapists' as const,
+      path: '/api/models' as const,
       responses: {
-        200: z.array(z.custom<typeof therapists.$inferSelect>()),
+        200: z.array(z.custom<typeof models.$inferSelect>()),
       },
     }
   }
@@ -41,4 +41,4 @@ export function buildUrl(path: string, params?: Record<string, string | number>)
 }
 
 export type ServicesListResponse = z.infer<typeof api.services.list.responses[200]>;
-export type TherapistsListResponse = z.infer<typeof api.therapists.list.responses[200]>;
+export type ModelsListResponse = z.infer<typeof api.models.list.responses[200]>;

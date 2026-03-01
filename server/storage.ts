@@ -1,11 +1,11 @@
 import { db } from "./db";
-import { services, therapists, type ServiceResponse, type TherapistResponse, type InsertService, type InsertTherapist } from "@shared/schema";
+import { services, models, type ServiceResponse, type ModelResponse, type InsertService, type InsertModel } from "@shared/schema";
 
 export interface IStorage {
   getServices(): Promise<ServiceResponse[]>;
-  getTherapists(): Promise<TherapistResponse[]>;
+  getModels(): Promise<ModelResponse[]>;
   createService(service: InsertService): Promise<ServiceResponse>;
-  createTherapist(therapist: InsertTherapist): Promise<TherapistResponse>;
+  createModel(model: InsertModel): Promise<ModelResponse>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -13,8 +13,8 @@ export class DatabaseStorage implements IStorage {
     return await db.select().from(services);
   }
 
-  async getTherapists(): Promise<TherapistResponse[]> {
-    return await db.select().from(therapists);
+  async getModels(): Promise<ModelResponse[]> {
+    return await db.select().from(models);
   }
 
   async createService(service: InsertService): Promise<ServiceResponse> {
@@ -22,9 +22,9 @@ export class DatabaseStorage implements IStorage {
     return newService;
   }
 
-  async createTherapist(therapist: InsertTherapist): Promise<TherapistResponse> {
-    const [newTherapist] = await db.insert(therapists).values(therapist).returning();
-    return newTherapist;
+  async createModel(model: InsertModel): Promise<ModelResponse> {
+    const [newModel] = await db.insert(models).values(model).returning();
+    return newModel;
   }
 }
 

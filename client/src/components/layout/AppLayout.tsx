@@ -21,7 +21,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
-    { href: "/therapists", label: "Therapists" },
+    { href: "/models", label: "Models" },
     { href: "/contact", label: "Contact" },
   ];
 

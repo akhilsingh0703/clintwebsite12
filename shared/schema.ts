@@ -8,7 +8,7 @@ export const services = pgTable("services", {
   description: text("description").notNull(),
 });
 
-export const therapists = pgTable("therapists", {
+export const models = pgTable("models", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
   nationality: text("nationality").notNull(),
@@ -21,15 +21,15 @@ export const therapists = pgTable("therapists", {
 });
 
 export const insertServiceSchema = createInsertSchema(services).omit({ id: true });
-export const insertTherapistSchema = createInsertSchema(therapists).omit({ id: true });
+export const insertModelSchema = createInsertSchema(models).omit({ id: true });
 
 export type Service = typeof services.$inferSelect;
 export type InsertService = z.infer<typeof insertServiceSchema>;
 
-export type Therapist = typeof therapists.$inferSelect;
-export type InsertTherapist = z.infer<typeof insertTherapistSchema>;
+export type Model = typeof models.$inferSelect;
+export type InsertModel = z.infer<typeof insertModelSchema>;
 
 export type ServiceResponse = Service;
 export type ServicesListResponse = Service[];
-export type TherapistResponse = Therapist;
-export type TherapistsListResponse = Therapist[];
+export type ModelResponse = Model;
+export type ModelsListResponse = Model[];

@@ -43,10 +43,10 @@ export default function Home() {
                 Explore Services <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
-                href="/therapists"
+                href="/models"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white border-2 border-border text-foreground font-semibold hover:border-primary hover:text-primary transition-all duration-300"
               >
-                Meet Our Therapists
+                Meet Our Models
               </Link>
             </div>
           </motion.div>

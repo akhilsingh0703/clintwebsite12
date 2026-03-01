@@ -59,10 +59,10 @@ export default function Services() {
                     </p>
                   </div>
                   <Link 
-                    href="/therapists"
+                    href="/models"
                     className="inline-flex items-center text-primary font-semibold group/link"
                   >
-                    View Therapists
+                    View Models
                     <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-2 transition-transform" />
                   </Link>
                 </motion.div>
