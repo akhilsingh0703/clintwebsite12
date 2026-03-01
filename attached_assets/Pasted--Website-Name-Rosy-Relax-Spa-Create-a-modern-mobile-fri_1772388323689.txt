@@ -1,0 +1,234 @@
+🪷 Website Name: Rosy Relax Spa
+
+Create a modern, mobile-friendly, SEO-optimized spa & wellness website for Rosy Relax Spa, offering professional relaxation and massage therapy services in Delhi and Gurgaon with WhatsApp booking.
+
+The design should feel luxurious, calming, and professional.
+
+🎯 MAIN GOAL
+
+Showcase spa & relaxation services
+
+Display therapists with photos & pricing
+
+Allow quick booking via WhatsApp
+
+Rank in Google for Delhi & Gurgaon searches
+
+🌐 REQUIRED PAGES
+🏠 HOME PAGE
+Hero Section
+
+Headline:
+Premium Spa & Massage Services in Delhi & Gurgaon
+
+Tagline:
+Relax • Refresh • Rejuvenate
+
+CTA Button:
+👉 Book Now on WhatsApp
+
+Intro Section
+
+Rosy Relax Spa provides professional spa and relaxation therapy in Delhi and Gurgaon. Our trained Indian and international therapists deliver high-quality massage services in a hygienic, private, and comfortable environment.
+
+Featured Services
+
+✔ Full Body Massage
+✔ Aroma Therapy
+✔ Deep Tissue Therapy
+✔ Luxury Relaxation Spa
+
+Each service includes short description & WhatsApp booking.
+
+Why Choose Us
+
+✔ Professional therapists
+✔ Safe & hygienic environment
+✔ Premium spa experience
+✔ Easy WhatsApp booking
+✔ Available across Delhi NCR
+
+ℹ️ ABOUT US PAGE
+
+Rosy Relax Spa is dedicated to providing a premium wellness experience focused on stress relief, relaxation, and rejuvenation. Our trained therapists ensure a calm, private, and comfortable spa experience.
+
+We prioritize hygiene, professionalism, and customer satisfaction.
+
+💆 SERVICES PAGE
+Full Body Massage
+
+Relieves muscle tension and promotes deep relaxation.
+
+Aroma Therapy
+
+Essential oils enhance relaxation and reduce stress.
+
+Deep Tissue Therapy
+
+Targets deep muscle pain and stiffness.
+
+Luxury Spa Package
+
+Complete relaxation experience for mind & body.
+
+👉 Add duration options & pricing
+👉 WhatsApp booking button
+
+👩‍⚕️ THERAPISTS / MODEL BOOKING PAGE
+Page Title:
+
+Choose Your Therapist
+
+Intro:
+Select your preferred therapist and book instantly via WhatsApp.
+
+🇮🇳 Indian Therapists
+⭐ Ananya Sharma
+
+Photo
+Experience: 5 Years
+Specialty: Aroma & Relaxation Therapy
+Friendly & professional service
+
+Price:
+1 Hour – ₹3,000
+Full Night – ₹15,000
+
+Book on WhatsApp
+
+⭐ Priya Verma
+
+Photo
+Experience: 4 Years
+Specialty: Stress Relief Massage
+Calming & soothing techniques
+
+Price:
+1 Hour – ₹2,800
+Full Night – ₹14,000
+
+Book on WhatsApp
+
+⭐ Neha Kapoor
+
+Photo
+Experience: 6 Years
+Specialty: Deep Tissue Therapy
+Best for body pain relief
+
+Price:
+1 Hour – ₹3,500
+Full Night – ₹16,000
+
+Book on WhatsApp
+
+🇷🇺 Russian Therapists
+⭐ Natasha Ivanova
+
+Photo
+Experience: 6 Years
+Specialty: Luxury Deep Tissue Spa
+Premium relaxation experience
+
+Price:
+1 Hour – ₹5,000
+Full Night – ₹22,000
+
+Book on WhatsApp
+
+⭐ Elena Petrova
+
+Photo
+Experience: 5 Years
+Specialty: Aroma & Wellness Therapy
+
+Price:
+1 Hour – ₹4,800
+Full Night – ₹21,000
+
+Book on WhatsApp
+
+⭐ Sofia Romanova
+
+Photo
+Experience: 7 Years
+Specialty: Luxury Spa Therapy
+
+Price:
+1 Hour – ₹5,500
+Full Night – ₹24,000
+
+Book on WhatsApp
+
+📍 LOCATION SEO SECTION
+Spa Service in Delhi
+
+We provide spa services across Delhi including Connaught Place, Saket, Karol Bagh, and South Delhi.
+
+Spa Service in Gurgaon
+
+Our services are available in Gurgaon including DLF Phase 1-5, Cyber City, MG Road, and Golf Course Road.
+
+📲 BOOKING SECTION
+
+WhatsApp Button with prefilled message:
+
+https://wa.me/91XXXXXXXXXX?text=Hello%20I%20want%20to%20book%20a%20spa%20session
+📞 CONTACT PAGE
+
+Phone Number
+WhatsApp Chat Button
+Address
+Service Areas: Delhi & Gurgaon
+Opening Hours
+
+🎨 DESIGN STYLE
+
+✔ Soft pink & white luxury theme
+✔ Clean & modern layout
+✔ Smooth scrolling
+✔ Mobile responsive
+✔ Card-style therapist profiles
+✔ Elegant fonts & relaxing visuals
+
+🔑 SEO OPTIMIZATION
+SEO Title:
+
+Best Spa & Massage Service in Delhi & Gurgaon | Rosy Relax Spa
+
+Meta Description:
+
+Professional spa & massage services in Delhi and Gurgaon. Book trained Indian & international therapists via WhatsApp today.
+
+Keywords (use naturally):
+
+Spa in Delhi
+Spa in Gurgaon
+Massage service Delhi NCR
+Luxury spa Delhi
+Russian spa therapist Gurgaon
+Home spa Gurgaon
+
+🖼️ IMAGE SEO
+
+Use alt tags like:
+
+indian-spa-therapist-delhi
+
+russian-spa-therapist-gurgaon
+
+⚡ TECHNICAL SEO
+
+✔ Fast loading
+✔ Mobile friendly
+✔ HTTPS secure
+✔ Google Map embed
+✔ Sitemap & Search Console
+✔ Local business schema
+
+💎 OPTIONAL FEATURES
+
+✅ Google reviews section
+✅ Customer testimonials
+✅ Limited-time offers banner
+✅ Sticky WhatsApp button
