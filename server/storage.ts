@@ -1,38 +1,31 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import { services, therapists, type ServiceResponse, type TherapistResponse, type InsertService, type InsertTherapist } from "@shared/schema";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  getServices(): Promise<ServiceResponse[]>;
+  getTherapists(): Promise<TherapistResponse[]>;
+  createService(service: InsertService): Promise<ServiceResponse>;
+  createTherapist(therapist: InsertTherapist): Promise<TherapistResponse>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-
-  constructor() {
-    this.users = new Map();
+export class DatabaseStorage implements IStorage {
+  async getServices(): Promise<ServiceResponse[]> {
+    return await db.select().from(services);
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async getTherapists(): Promise<TherapistResponse[]> {
+    return await db.select().from(therapists);
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+  async createService(service: InsertService): Promise<ServiceResponse> {
+    const [newService] = await db.insert(services).values(service).returning();
+    return newService;
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createTherapist(therapist: InsertTherapist): Promise<TherapistResponse> {
+    const [newTherapist] = await db.insert(therapists).values(therapist).returning();
+    return newTherapist;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
