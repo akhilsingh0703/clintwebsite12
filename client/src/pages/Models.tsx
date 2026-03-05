@@ -6,51 +6,16 @@ import { MessageCircle, Star, Clock, Sparkles, Loader2 } from "lucide-react";
 export default function Models() {
   const { data: models, isLoading, error } = useModels();
 
-  // Updated display logic to handle empty/loading states with beautiful fallbacks
-  const displayModels = models?.length ? models : [
-    {
-      id: 1,
-      name: "Aanya",
-      nationality: "Indian",
-      experienceYears: 3,
-      specialty: "Aroma Therapy",
-      description: "Aanya brings a warm, soothing energy to every session. Expert in essential oils.",
-      price1h: 3000,
-      priceNight: 15000,
-      imageUrl: "https://images.unsplash.com/photo-1593164842264-854604db2260?q=80&w=2070&auto=format&fit=crop"
-    },
-    {
-      id: 2,
-      name: "Elena",
-      nationality: "Russian",
-      experienceYears: 5,
-      specialty: "Deep Tissue & Sensual",
-      description: "Professional, stunning, and highly skilled in releasing deep muscular tension.",
-      price1h: 5000,
-      priceNight: 25000,
-      imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2070&auto=format&fit=crop"
-    },
-    {
-      id: 3,
-      name: "Sarah",
-      nationality: "Thai",
-      experienceYears: 4,
-      specialty: "Swedish Massage",
-      description: "Gentle strokes and a beautiful presence make Sarah's sessions unforgettable.",
-      price1h: 4000,
-      priceNight: 20000,
-      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070&auto=format&fit=crop"
-    }
-  ];
+  const displayModels = models?.length ? models : [];
 
   return (
     <AppLayout>
       <section className="pt-20 pb-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Our Premium Models</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Our Exclusive Models</h1>
           <div className="w-24 h-1 bg-seven-color-mix mx-auto rounded-full mb-6" />
           <p className="text-lg text-muted-foreground">
-            Browse our exclusive selection of highly trained, stunning models available in Delhi & Gurgaon.
+            Browse our selection of highly trained models available in Mahipalpur, Aerocity, Dhaula Kuan, Vasant Kunj, Vasant vihar, Gurgaon, Lajpat Nagar, Connaught palace, and Dwarka.
           </p>
         </div>
       </section>
