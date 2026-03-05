@@ -27,66 +27,30 @@ async function seedDatabase() {
 
     const existingModels = await storage.getModels();
     if (existingModels.length === 0) {
-      await storage.createModel({
-        name: "Ananya Sharma",
-        nationality: "Indian",
-        experienceYears: 5,
-        specialty: "Aroma & Relaxation Therapy",
-        description: "Friendly & professional service",
-        price1h: 3000,
-        priceNight: 15000,
-        imageUrl: "https://images.unsplash.com/photo-1593164842264-854604db2260?q=80&w=2070&auto=format&fit=crop"
-      });
-      await storage.createModel({
-        name: "Priya Verma",
-        nationality: "Indian",
-        experienceYears: 4,
-        specialty: "Stress Relief Massage",
-        description: "Calming & soothing techniques",
-        price1h: 2800,
-        priceNight: 14000,
-        imageUrl: "https://images.unsplash.com/photo-1621184414184-0155f0ce0f07?q=80&w=2070&auto=format&fit=crop"
-      });
-      await storage.createModel({
-        name: "Neha Kapoor",
-        nationality: "Indian",
-        experienceYears: 6,
-        specialty: "Deep Tissue Therapy",
-        description: "Best for body pain relief",
-        price1h: 3500,
-        priceNight: 16000,
-        imageUrl: "https://images.unsplash.com/photo-1583413230540-ddf9068c9d2d?q=80&w=2070&auto=format&fit=crop"
-      });
-      await storage.createModel({
-        name: "Natasha Ivanova",
-        nationality: "Russian",
-        experienceYears: 6,
-        specialty: "Luxury Deep Tissue Spa",
-        description: "Premium relaxation experience",
-        price1h: 5000,
-        priceNight: 22000,
-        imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2070&auto=format&fit=crop"
-      });
-      await storage.createModel({
-        name: "Elena Petrova",
-        nationality: "Russian",
-        experienceYears: 5,
-        specialty: "Aroma & Wellness Therapy",
-        description: "Premium wellness experience",
-        price1h: 4800,
-        priceNight: 21000,
-        imageUrl: "https://images.unsplash.com/photo-1512413911193-3dec5e0bf432?q=80&w=2070&auto=format&fit=crop"
-      });
-      await storage.createModel({
-        name: "Sofia Romanova",
-        nationality: "Russian",
-        experienceYears: 7,
-        specialty: "Luxury Spa Therapy",
-        description: "Complete mind and body rejuvenation",
-        price1h: 5500,
-        priceNight: 24000,
-        imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070&auto=format&fit=crop"
-      });
+      const girlImages = [
+        "https://images.unsplash.com/photo-1593164842264-854604db2260?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1621184414184-0155f0ce0f07?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1583413230540-ddf9068c9d2d?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1512413911193-3dec5e0bf432?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070&auto=format&fit=crop"
+      ];
+
+      const names = ["Ananya", "Priya", "Neha", "Natasha", "Elena", "Sofia"];
+      const nationalities = ["Indian", "Indian", "Indian", "Russian", "Russian", "Russian"];
+      
+      for (let i = 0; i < names.length; i++) {
+        await storage.createModel({
+          name: names[i],
+          nationality: nationalities[i],
+          experienceYears: 20 + i, // Using as age proxy for now or just experience
+          specialty: "Full Body Massage, Aroma Therapy",
+          description: `Available in Mahipalpur, Aerocity, Dhaula Kuan, Vasant Kunj, Vasant vihar, Gurgaon, Lajpat Nagar, Connaught palace, Dwarka. Age: ${20 + i}. Services: Swedish, Deep Tissue, B2B.`,
+          price1h: 3000 + (i * 500),
+          priceNight: 15000 + (i * 2000),
+          imageUrl: girlImages[i]
+        });
+      }
     }
   } catch (error) {
     console.error("Failed to seed database:", error);

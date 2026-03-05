@@ -61,6 +61,26 @@ export default function Contact() {
 
             {/* Quick Contact Form UI */}
             <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-luxury border border-border">
+              <h3 className="text-2xl font-serif font-bold mb-8">Our Location</h3>
+              <div className="rounded-3xl overflow-hidden h-[300px] border border-border mb-8">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.518683525164!2d77.1245!3d28.5375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19457fb73955%3A0x6b2b5a1999999999!2sMahipalpur%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <a 
+                href="https://maps.app.goo.gl/4uX5v7t8XJrjGtNS8?g_st=aw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary font-bold hover:underline block text-center mb-8"
+              >
+                View on Google Maps
+              </a>
               <h3 className="text-2xl font-serif font-bold mb-8">Send an Inquiry</h3>
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>

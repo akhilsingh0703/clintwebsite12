@@ -4,6 +4,7 @@ import { Menu, X, Sparkles, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const WHATSAPP_NUMBER = "919999999999";
+const CONTACT_NUMBER = "+91 999 999 9999";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20I%20want%20to%20book%20a%20spa%20session`;
 
 export function AppLayout({ children }: { children: ReactNode }) {

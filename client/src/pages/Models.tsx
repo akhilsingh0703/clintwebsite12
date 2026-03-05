@@ -119,14 +119,19 @@ export default function Models() {
                         "{model.description}"
                       </p>
 
-                      <div className="mt-auto pt-4 border-t border-border grid grid-cols-2 gap-4 mb-6">
-                        <div>
-                          <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider mb-1">1 Hour</p>
-                          <p className="font-serif font-semibold text-lg">₹{model.price1h?.toLocaleString()}</p>
+                      <div className="space-y-2 mb-6 text-sm">
+                        <div className="flex justify-between items-center">
+                          <span className="text-muted-foreground">1 Hour Session</span>
+                          <span className="font-bold text-foreground">₹{model.price1h?.toLocaleString()}</span>
                         </div>
-                        <div>
-                          <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider mb-1">Full Night</p>
-                          <p className="font-serif font-semibold text-lg text-primary">₹{model.priceNight?.toLocaleString()}</p>
+                        <div className="flex justify-between items-center">
+                          <span className="text-muted-foreground">Full Night</span>
+                          <span className="font-bold text-foreground">₹{model.priceNight?.toLocaleString()}</span>
+                        </div>
+                        <div className="pt-2 mt-2 border-t border-border/50">
+                          <p className="text-xs text-muted-foreground leading-relaxed italic">
+                            {model.description}
+                          </p>
                         </div>
                       </div>
 
