@@ -30,11 +30,10 @@ export function AppLayout({ children }: { children: ReactNode }) {
     <div className="min-h-screen flex flex-col relative">
       {/* 7-color luxury subtle top border */}
       <div className="h-1.5 w-full bg-seven-color-mix z-50 fixed top-0" />
-      
+
       <header
-        className={`fixed top-1.5 w-full z-40 transition-all duration-300 ${
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-white py-5"
-        }`}
+        className={`fixed top-1.5 w-full z-40 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-white py-5"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2 group">
@@ -50,9 +49,8 @@ export function AppLayout({ children }: { children: ReactNode }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === link.href ? "text-primary border-b-2 border-primary pb-1" : "text-foreground"
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary ${location === link.href ? "text-primary border-b-2 border-primary pb-1" : "text-foreground"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -98,9 +96,8 @@ export function AppLayout({ children }: { children: ReactNode }) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-2xl font-serif ${
-                    location === link.href ? "text-primary font-bold" : "text-foreground"
-                  }`}
+                  className={`text-2xl font-serif ${location === link.href ? "text-primary font-bold" : "text-foreground"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -136,7 +133,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
 
       <footer className="bg-white border-t border-border mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-5 h-5 text-primary" />
@@ -157,10 +154,24 @@ export function AppLayout({ children }: { children: ReactNode }) {
             <div>
               <h4 className="font-serif font-semibold text-lg mb-4">Contact Info</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Delhi & Gurgaon</li>
+                <li>Mahipalpur, Aerocity, Gurgaon, DW</li>
                 <li>Open 24/7 for appointments</li>
-                <li>Phone/WhatsApp: +91 999 999 9999</li>
+                <li>Phone/WhatsApp: +91 7808800124</li>
               </ul>
+            </div>
+            <div>
+              <h4 className="font-serif font-semibold text-lg mb-4">Our Location</h4>
+              <div className="rounded-xl overflow-hidden shadow-sm h-48 w-full border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112151.04258838384!2d76.99221191395995!3d28.5355161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1afdf4effe55%3A0xc345710609b11ed4!2sMahipalpur%2C%20New%20Delhi%2C%20Delhi%20110037%2C%20India!5e0!3m2!1sen!2sus!4v1709400000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">

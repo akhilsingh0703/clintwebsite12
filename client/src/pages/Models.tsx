@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useModels } from "../hooks/use-spa";
 import { AppLayout } from "../components/layout/AppLayout";
 import { motion } from "framer-motion";
@@ -5,8 +6,9 @@ import { MessageCircle, Star, Clock, Sparkles, Loader2 } from "lucide-react";
 
 export default function Models() {
   const { data: models, isLoading, error } = useModels();
+  const [filter, setFilter] = useState<"Indian" | "Russian">("Indian");
 
-  const displayModels = models?.length ? models : [];
+  const displayModels = models?.filter(m => m.nationality === filter) || [];
 
   return (
     <AppLayout>
@@ -14,15 +16,31 @@ export default function Models() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Our Exclusive Models</h1>
           <div className="w-24 h-1 bg-seven-color-mix mx-auto rounded-full mb-6" />
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-8">
             Browse our selection of highly trained models available in Mahipalpur, Aerocity, Dhaula Kuan, Vasant Kunj, Vasant vihar, Gurgaon, Lajpat Nagar, Connaught palace, and Dwarka.
           </p>
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setFilter("Indian")}
+              className={`px-6 py-2 rounded-full font-bold transition-all ${filter === "Indian" ? "bg-primary text-white shadow-lg" : "bg-white text-muted-foreground border-2 border-border"
+                }`}
+            >
+              Indian Models
+            </button>
+            <button
+              onClick={() => setFilter("Russian")}
+              className={`px-6 py-2 rounded-full font-bold transition-all ${filter === "Russian" ? "bg-primary text-white shadow-lg" : "bg-white text-muted-foreground border-2 border-border"
+                }`}
+            >
+              Russian Models
+            </button>
+          </div>
         </div>
       </section>
 
       <section className="py-12 bg-secondary/30 min-h-[50vh]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {isLoading ? (
             <div className="flex flex-col items-center justify-center h-64 text-primary">
               <Loader2 className="w-12 h-12 animate-spin mb-4" />
@@ -36,9 +54,9 @@ export default function Models() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {displayModels.map((model, idx) => {
-                const waText = `Hello I want to book a session with ${model.name}`;
-                const waLink = `https://wa.me/919999999999?text=${encodeURIComponent(waText)}`;
-                
+                const waText = `Hi, I saw ${model.name}'s profile on your beautiful site. I want to book a session with her. Age: ${model.age}.`;
+                const waLink = `https://wa.me/917808800124?text=${encodeURIComponent(waText)}`;
+
                 return (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -49,9 +67,9 @@ export default function Models() {
                   >
                     <div className="relative h-80 overflow-hidden">
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                      <img 
-                        src={model.imageUrl} 
-                        alt={model.name} 
+                      <img
+                        src={model.imageUrl}
+                        alt={model.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute bottom-4 left-4 z-20 flex gap-2">
@@ -60,7 +78,7 @@ export default function Models() {
                         </span>
                       </div>
                     </div>
-                    
+
                     <div className="p-6 flex-1 flex flex-col">
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="text-2xl font-serif font-bold text-foreground">
@@ -70,10 +88,10 @@ export default function Models() {
                           <Star className="w-3 h-3 fill-current mr-1" /> Premium
                         </div>
                       </div>
-                      
+
                       <div className="space-y-2 mb-4 text-sm text-muted-foreground">
                         <p className="flex items-center gap-2">
-                          <Sparkles className="w-4 h-4 text-primary" /> {model.specialty}
+                          <Sparkles className="w-4 h-4 text-primary" /> Age {model.age} • {model.specialty}
                         </p>
                         <p className="flex items-center gap-2">
                           <Clock className="w-4 h-4 text-primary" /> {model.experienceYears} Years Experience
