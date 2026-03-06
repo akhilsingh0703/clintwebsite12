@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import bannerImg from "@assets/media__1772761844643.jpg";
+import bannerImg from "@assets/Video.mp4";
 import slide1 from "@assets/media__1772763417629.jpg";
 import slide2 from "@assets/media__1772763417673.jpg";
 import slide3 from "@assets/media__1772763417723.jpg";
@@ -19,7 +19,7 @@ import slide4 from "@assets/media__1772763417760.jpg";
 import slide5 from "@assets/Video.mp4";
 
 const slides = [
-  { type: "image", src: bannerImg },
+  { type: "video", src: bannerImg },
   { type: "image", src: slide1 },
   { type: "image", src: slide2 },
   { type: "image", src: slide3 },
