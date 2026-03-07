@@ -1,16 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Leaf, Heart, Sparkles, CheckCircle2, Users, Star, Award, Clock, ShieldCheck } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Sparkles, CheckCircle2, Users, Star, Award, Clock, ShieldCheck, PhoneCall } from "lucide-react";
 import { AppLayout } from "../components/layout/AppLayout";
 import { useModels } from "../hooks/use-spa";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import bannerImg from "@assets/Video.mp4";
 import slide1 from "@assets/media__1772763417629.jpg";
 import slide2 from "@assets/media__1772763417673.jpg";
@@ -66,7 +59,7 @@ export default function Home() {
             <motion.img
               key={`img-${currentSlide}`}
               src={slides[currentSlide].src}
-              initial={{ opacity: 0, scale: 1.05 }}
+              initial={{ opacity: 0, scale: 0.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -138,49 +131,77 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="relative px-8">
-            <Carousel
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent>
-                {displayModels.map((model) => {
-                  const waText = `Hi, I saw ${model.name}'s profile on your beautiful site. I want to book a session with her. Age: ${model.age}.`;
-                  const waLink = `https://wa.me/917808800124?text=${encodeURIComponent(waText)}`;
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {displayModels.map((model, idx) => {
+              const waText = `Hi, I saw ${model.name}'s profile on your beautiful site. I want to book a session with her. Age: ${model.age}.`;
+              const waLink = `https://wa.me/917808800124?text=${encodeURIComponent(waText)}`;
+              const callLink = `tel:+917808800124`;
 
-                  return (
-                    <CarouselItem key={model.id} className="md:basis-1/2 lg:basis-1/3 p-4">
-                      <div className="bg-white rounded-3xl overflow-hidden shadow-luxury border border-white hover:border-primary/30 transition-all duration-300">
-                        <div className="h-[400px] w-full relative">
-                          <img
-                            src={model.imageUrl}
-                            alt={model.name}
-                            className="absolute inset-0 w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="p-6 text-center">
-                          <h3 className="text-2xl font-serif font-bold">{model.name}, {model.age}</h3>
-                          <p className="text-sm text-primary mb-4">{model.specialty}</p>
-                          <a
-                            href={waLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full py-3 inline-block rounded-xl bg-seven-color-mix text-white font-semibold text-center shadow hover:-translate-y-0.5 transition-transform"
-                          >
-                            Book {model.name} Now
-                          </a>
-                        </div>
+              return (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1 }}
+                  key={model.id}
+                  className="bg-white rounded-[2rem] overflow-hidden shadow-luxury border border-white hover:border-primary/30 transition-all duration-500 group flex flex-col"
+                >
+                  <div className="relative h-80 overflow-hidden">
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                    <img
+                      src={model.imageUrl}
+                      alt={model.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute bottom-4 left-4 z-20 flex gap-2">
+                      <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-bold text-foreground">
+                        {model.nationality}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-2xl font-serif font-bold text-foreground">
+                        {model.name}
+                      </h3>
+                      <div className="flex items-center text-yellow-500 bg-yellow-50 px-2 py-1 rounded-full text-xs font-bold">
+                        <Star className="w-3 h-3 fill-current mr-1" /> Premium
                       </div>
-                    </CarouselItem>
-                  );
-                })}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+                    </div>
+
+                    <div className="space-y-2 mb-4 text-sm text-muted-foreground">
+                      <p className="flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-primary" /> Age {model.age} • {model.specialty}
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-primary" /> {model.experienceYears} Years Experience
+                      </p>
+                    </div>
+
+                    <p className="text-sm leading-relaxed text-foreground/70 mb-6 italic border-l-2 border-primary/30 pl-3">
+                      "{model.description}"
+                    </p>
+
+                    <div className="mt-auto grid grid-cols-2 gap-3">
+                      <a
+                        href={callLink}
+                        className="py-3 rounded-xl bg-gray-50 text-foreground font-semibold text-center border-2 border-gray-200 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center gap-2"
+                      >
+                        <PhoneCall className="w-4 h-4" /> Call
+                      </a>
+                      <a
+                        href={waLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-3 rounded-xl bg-seven-color-mix text-white font-semibold text-center shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
+                      >
+                        WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
