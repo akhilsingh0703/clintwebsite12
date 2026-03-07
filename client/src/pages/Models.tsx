@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useModels } from "../hooks/use-spa";
 import { AppLayout } from "../components/layout/AppLayout";
 import { motion } from "framer-motion";
-import { MessageCircle, Star, Clock, Sparkles, Loader2 } from "lucide-react";
+import { MessageCircle, Star, Clock, Sparkles, Loader2, PhoneCall } from "lucide-react";
 
 export default function Models() {
   const { data: models, isLoading, error } = useModels();
@@ -94,7 +94,7 @@ export default function Models() {
                           <Sparkles className="w-4 h-4 text-primary" /> Age {model.age} • {model.specialty}
                         </p>
                         <p className="flex items-center gap-2">
-                          <Clock className="w-4 h-4 text-primary" /> {model.experienceYears} Years Experience
+                          <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" /> {model.rating}/5 Rating
                         </p>
                       </div>
 
@@ -118,14 +118,22 @@ export default function Models() {
                         </div>
                       </div>
 
-                      <a
-                        href={waLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full py-3.5 rounded-xl bg-seven-color-mix text-white font-semibold text-center shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 block"
-                      >
-                        Book {model.name} Now
-                      </a>
+                      <div className="mt-auto grid grid-cols-2 gap-3">
+                        <a
+                          href="tel:+917808800124"
+                          className="py-3 rounded-xl bg-gray-50 text-foreground font-semibold text-center border-2 border-gray-200 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                          <PhoneCall className="w-4 h-4" /> Call
+                        </a>
+                        <a
+                          href={waLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="py-3 rounded-xl bg-seven-color-mix text-white font-semibold text-center shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                          WhatsApp
+                        </a>
+                      </div>
                     </div>
                   </motion.div>
                 );

@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Sparkles, MessageCircle } from "lucide-react";
+import { Menu, X, Sparkles, MessageCircle, PhoneCall } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const WHATSAPP_NUMBER = "919999999999";
@@ -120,16 +120,25 @@ export function AppLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
 
-      {/* Sticky WhatsApp CTA */}
-      <a
-        href={WHATSAPP_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 p-4 bg-[#25D366] text-white rounded-full shadow-xl shadow-green-500/30 hover:scale-110 transition-transform duration-300 group flex items-center justify-center"
-      >
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
-        <MessageCircle className="w-8 h-8 relative z-10" />
-      </a>
+      {/* Floating Call & WhatsApp Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a
+          href="tel:+917808800124"
+          className="p-4 bg-pink-600 text-white rounded-full shadow-xl hover:scale-110 transition-transform duration-300 group flex items-center justify-center relative"
+        >
+          <PhoneCall className="w-7 h-7 relative z-10" />
+        </a>
+
+        <a
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 bg-[#25D366] text-white rounded-full shadow-xl shadow-green-500/30 hover:scale-110 transition-transform duration-300 group flex items-center justify-center relative"
+        >
+          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
+          <MessageCircle className="w-7 h-7 relative z-10" />
+        </a>
+      </div>
 
       <footer className="bg-white border-t border-border mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

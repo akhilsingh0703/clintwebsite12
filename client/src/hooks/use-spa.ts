@@ -10,7 +10,7 @@ export interface Model {
   age: number;
   nationality: string;
   specialty: string;
-  experienceYears: number;
+  rating: number;
   description: string;
   price1h: number;
   priceNight: number;
@@ -47,7 +47,7 @@ export function useModels() {
       age: 22,
       nationality: "Indian",
       specialty: "Aroma Luxury",
-      experienceYears: 4,
+      rating: 4.9,
       description: "Expert in deep relaxation and stress relief.",
       price1h: 3500,
       priceNight: 12000,
@@ -59,10 +59,10 @@ export function useModels() {
       age: 24,
       nationality: "Indian",
       specialty: "Swedish Massage",
-      experienceYears: 3,
+      rating: 4.8,
       description: "Providing healing touch with soothing energy.",
-      price1h: 3500,
-      priceNight: 12000,
+      price1h: 3700,
+      priceNight: 15000,
       imageUrl: img2
     },
     {
@@ -71,10 +71,10 @@ export function useModels() {
       age: 21,
       nationality: "Indian",
       specialty: "Deep Tissue Therapy",
-      experienceYears: 2,
+      rating: 4.7,
       description: "Specialized in sensual, full-body massages.",
-      price1h: 3500,
-      priceNight: 12000,
+      price1h: 3400,
+      priceNight: 11000,
       imageUrl: img3
     },
     {
@@ -83,10 +83,10 @@ export function useModels() {
       age: 23,
       nationality: "Indian",
       specialty: "Relaxation Spa",
-      experienceYears: 5,
+      rating: 4.9,
       description: "Experienced therapist offering luxurious sessions.",
-      price1h: 3500,
-      priceNight: 12000,
+      price1h: 3200,
+      priceNight: 10000,
       imageUrl: img4
     },
     {
@@ -95,10 +95,10 @@ export function useModels() {
       age: 25,
       nationality: "Indian",
       specialty: "Sensual Model Therapy",
-      experienceYears: 6,
+      rating: 4.8,
       description: "Aesthetic profile designed for premium customers.",
-      price1h: 3500,
-      priceNight: 12000,
+      price1h: 3600,
+      priceNight: 14000,
       imageUrl: img5
     },
     {
@@ -107,10 +107,10 @@ export function useModels() {
       age: 23,
       nationality: "Russian",
       specialty: "Swedish Massage",
-      experienceYears: 4,
+      rating: 5.0,
       description: "Exquisite European experience full of relaxation.",
       price1h: 6000,
-      priceNight: 20000,
+      priceNight: 18000,
       imageUrl: rImg1
     },
     {
@@ -119,10 +119,10 @@ export function useModels() {
       age: 24,
       nationality: "Russian",
       specialty: "Aroma Luxury",
-      experienceYears: 3,
+      rating: 4.9,
       description: "Relaxing touch with exotic oils and beautiful vibes.",
-      price1h: 6000,
-      priceNight: 20000,
+      price1h: 6500,
+      priceNight: 19000,
       imageUrl: rImg2
     },
     {
@@ -131,10 +131,10 @@ export function useModels() {
       age: 22,
       nationality: "Russian",
       specialty: "Deep Tissue Therapy",
-      experienceYears: 2,
+      rating: 4.8,
       description: "Strong yet gentle techniques for perfect unwinding.",
-      price1h: 6000,
-      priceNight: 20000,
+      price1h: 6200,
+      priceNight: 18500,
       imageUrl: rImg3
     },
     {
@@ -143,10 +143,10 @@ export function useModels() {
       age: 21,
       nationality: "Russian",
       specialty: "Relaxation Spa",
-      experienceYears: 1,
+      rating: 4.9,
       description: "Young and beautiful with a soothing touch.",
-      price1h: 6000,
-      priceNight: 20000,
+      price1h: 7000,
+      priceNight: 21000,
       imageUrl: rImg4
     },
     {
@@ -155,9 +155,9 @@ export function useModels() {
       age: 26,
       nationality: "Russian",
       specialty: "Sensual Model Therapy",
-      experienceYears: 5,
+      rating: 5.0,
       description: "Premium model for elite luxury companionship.",
-      price1h: 6000,
+      price1h: 6800,
       priceNight: 20000,
       imageUrl: rImg5
     }

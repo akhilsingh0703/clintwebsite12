@@ -174,13 +174,25 @@ export default function Home() {
                         <Sparkles className="w-4 h-4 text-primary" /> Age {model.age} • {model.specialty}
                       </p>
                       <p className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-primary" /> {model.experienceYears} Years Experience
+                        <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" /> {model.rating}/5 Rating
                       </p>
                     </div>
 
                     <p className="text-sm leading-relaxed text-foreground/70 mb-6 italic border-l-2 border-primary/30 pl-3">
                       "{model.description}"
                     </p>
+
+                    <div className="flex justify-around items-center text-sm font-semibold mb-6 border-t border-b py-3">
+                      <div>
+                        <span className="text-gray-400 block text-xs">1 Hour</span>
+                        ₹{model.price1h?.toLocaleString()}
+                      </div>
+                      <div className="w-px h-8 bg-gray-200"></div>
+                      <div>
+                        <span className="text-gray-400 block text-xs">Full Night</span>
+                        ₹{model.priceNight?.toLocaleString()}
+                      </div>
+                    </div>
 
                     <div className="mt-auto grid grid-cols-2 gap-3">
                       <a
@@ -337,6 +349,27 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SEO SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-gray-700">
+            <h2 className="text-3xl font-serif font-bold mb-6 text-black">
+              The Best Russian Spa in Delhi NCR
+            </h2>
+            <p className="mb-4 leading-relaxed">
+              Welcome to the ultimate destination for relaxation and rejuvenation. If you are looking for a premium <strong>Russian spa in Delhi</strong>, our center offers world-class services that blend traditional therapeutic techniques with modern luxury. We pride ourselves on providing an authentic experience designed to relieve stress and revitalize your body and mind.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Conveniently located for travelers and residents alike, we are the most highly-rated <strong>spa in Mahipalpur</strong> and <strong>Russian spa in Mahipalpur</strong>. Whether you have just landed or are taking a break from a busy schedule, our center provides the perfect tranquil escape. We are also the top choice for guests seeking a luxurious <strong>Russian spa in aerocity</strong>, ensuring unmatched hospitality, privacy, and hygiene.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Our elite wellness centers extend across the most exclusive neighborhoods. Experience true serenity at our luxurious <strong>Russian spa in vasant kunj</strong>, known for its elegant ambiance and professional therapists. For those in the heart of the city, our highly sought-after <strong>Russian spa in Dhaula Kuan</strong> offers bespoke massage treatments tailored specifically to your wellness needs. Book your appointment today and discover the finest standard of relaxation in the capital.
+            </p>
+          </div>
+        </div>
+      </section>
+
     </AppLayout>
   );
 }
