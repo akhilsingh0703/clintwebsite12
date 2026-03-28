@@ -24,10 +24,10 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-serif font-bold mb-2">Phone & WhatsApp</h3>
                   <p className="text-muted-foreground mb-3">Available 24/7 for direct bookings and inquiries.</p>
-                  <a href="tel:+919999999999" className="text-lg font-semibold hover:text-primary transition-colors block">
-                    +91 999 999 9999
+                  <a href="tel:+917808800124" className="text-lg font-semibold hover:text-primary transition-colors block">
+                    +917808800124
                   </a>
-                  <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-green-600 hover:text-green-700 transition-colors inline-block mt-1">
+                  <a href="https://wa.me/+917808800124" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-green-600 hover:text-green-700 transition-colors inline-block mt-1">
                     Message on WhatsApp &rarr;
                   </a>
                 </div>
@@ -109,7 +109,7 @@ export default function Contact() {
                 </div>
                 <button
                   type="button"
-                  onClick={() => window.open('https://wa.me/919999999999', '_blank')}
+                  onClick={() => window.open('https://wa.me/+917808800124', '_blank')}
                   className="w-full py-4 rounded-xl bg-seven-color-mix text-white font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   Send via WhatsApp
