@@ -1,0 +1,195 @@
+import { ReactNode, useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
+import { Menu, X, Sparkles, MessageCircle, PhoneCall } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const WHATSAPP_NUMBER = "+917808800124";
+const CONTACT_NUMBER = "+917808800124";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello Rosy Spa Center i Wan Book Model`;
+
+export function AppLayout({ children }: { children: ReactNode }) {
+  const [location] = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/services", label: "Services" },
+    { href: "/models", label: "Models" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col relative">
+      {/* 7-color luxury subtle top border */}
+      <div className="h-1.5 w-full bg-seven-color-mix z-50 fixed top-0" />
+
+      <header
+        className={`fixed top-1.5 w-full z-40 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-white py-5"
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <Link href="/" className="flex items-center gap-2 group">
+            <Sparkles className="w-6 h-6 text-primary group-hover:text-pink-400 transition-colors" />
+            <span className="font-serif text-2xl font-bold text-foreground tracking-tight">
+              Rosy Relax <span className="text-primary italic font-medium">Spa</span>
+            </span>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors hover:text-primary ${location === link.href ? "text-primary border-b-2 border-primary pb-1" : "text-foreground"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 rounded-full bg-seven-color-mix text-white font-semibold text-sm shadow-lg shadow-pink-500/20 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+            >
+              Book Now
+            </a>
+          </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 20 }}
+            className="fixed inset-0 z-50 bg-white md:hidden flex flex-col"
+          >
+            <div className="p-5 flex justify-end">
+              <button onClick={() => setIsMobileMenuOpen(false)} className="p-2">
+                <X className="w-8 h-8 text-foreground" />
+              </button>
+            </div>
+            <nav className="flex flex-col items-center gap-8 mt-10">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-2xl font-serif ${location === link.href ? "text-primary font-bold" : "text-foreground"
+                    }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-8 px-10 py-4 rounded-full bg-seven-color-mix text-white font-serif text-xl shadow-lg hover:opacity-90 transition-opacity"
+              >
+                Book Your Session
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <main className="flex-1 mt-20">
+        {children}
+      </main>
+
+      {/* Floating Call & WhatsApp Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a
+          href="tel:+917808800124"
+          className="p-4 bg-pink-600 text-white rounded-full shadow-xl hover:scale-110 transition-transform duration-300 group flex items-center justify-center relative"
+        >
+          <PhoneCall className="w-7 h-7 relative z-10" />
+        </a>
+
+        <a
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 bg-[#25D366] text-white rounded-full shadow-xl shadow-green-500/30 hover:scale-110 transition-transform duration-300 group flex items-center justify-center relative"
+        >
+          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
+          <MessageCircle className="w-7 h-7 relative z-10" />
+        </a>
+      </div>
+
+      <footer className="bg-white border-t border-border mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <Link href="/" className="flex items-center gap-2 mb-4">
+                <Sparkles className="w-5 h-5 text-primary" />
+                <span className="font-serif text-xl font-bold">Rosy Relax Spa</span>
+              </Link>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Premium Spa & Massage Services in Delhi & Gurgaon. Experience the ultimate relaxation, refresh your mind, and rejuvenate your body.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-serif font-semibold text-lg mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
+                <li><Link href="/therapists" className="hover:text-primary transition-colors">Therapists & Models</Link></li>
+                <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+                <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-serif font-semibold text-lg mb-4">Contact Info</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Mahipalpur, Aerocity, Gurgaon, DW</li>
+                <li>Open 24/7 for appointments</li>
+                <li>Phone/WhatsApp: +91 7808800124</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-serif font-semibold text-lg mb-4">Our Location</h4>
+              <div className="rounded-xl overflow-hidden shadow-sm h-48 w-full border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112151.04258838384!2d76.99221191395995!3d28.5355161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1afdf4effe55%3A0xc345710609b11ed4!2sMahipalpur%2C%20New%20Delhi%2C%20Delhi%20110037%2C%20India!5e0!3m2!1sen!2sus!4v1709400000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} Rosy Relax Spa. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

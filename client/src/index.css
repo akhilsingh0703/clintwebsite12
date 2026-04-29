@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 20% 99%;
+    --foreground: 340 30% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 340 30% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 30% 15%;
+    
+    --primary: 340 60% 65%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 340 20% 95%;
+    --secondary-foreground: 340 40% 30%;
+    
+    --muted: 340 10% 95%;
+    --muted-foreground: 340 15% 45%;
+    
+    --accent: 340 40% 92%;
+    --accent-foreground: 340 40% 25%;
+    
+    --border: 340 20% 92%;
+    --input: 340 20% 92%;
+    --ring: 340 60% 65%;
+    
+    --radius: 1rem;
+    
+    --font-sans: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  /* Soft luxury 7-color rainbow mix */
+  .bg-seven-color-mix {
+    background: linear-gradient(
+      90deg,
+      #ff9a9e 0%,    /* Pink */
+      #fecfef 16%,   /* Light Pink */
+      #fdcbf1 33%,   /* Lavender */
+      #a1c4fd 50%,   /* Soft Blue */
+      #c2e9fb 66%,   /* Cyan/Mint */
+      #d4fc79 83%,   /* Pale Lime */
+      #ffecd2 100%   /* Peach */
+    );
+  }
+
+  .text-seven-color {
+    background: linear-gradient(90deg, #ff9a9e, #a1c4fd, #ffecd2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Beautiful smooth shadow for luxury cards */
+  .shadow-luxury {
+    box-shadow: 0 10px 40px -10px rgba(228, 155, 175, 0.15), 0 4px 6px -4px rgba(228, 155, 175, 0.05);
+  }
+}
