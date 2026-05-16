@@ -6,30 +6,30 @@
 
 @layer base {
   :root {
-    --background: 340 20% 99%;
-    --foreground: 340 30% 15%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
     
     --card: 0 0% 100%;
-    --card-foreground: 340 30% 15%;
+    --card-foreground: 222 47% 11%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 340 30% 15%;
+    --popover-foreground: 222 47% 11%;
     
-    --primary: 340 60% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
     
-    --secondary: 340 20% 95%;
-    --secondary-foreground: 340 40% 30%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
     
-    --muted: 340 10% 95%;
-    --muted-foreground: 340 15% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
     
-    --accent: 340 40% 92%;
-    --accent-foreground: 340 40% 25%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
     
-    --border: 340 20% 92%;
-    --input: 340 20% 92%;
-    --ring: 340 60% 65%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
     
     --radius: 1rem;
     
@@ -55,22 +55,18 @@
     font-family: var(--font-sans);
   }
 
-  /* Soft luxury 7-color rainbow mix */
+  /* Soft luxury blue mix */
   .bg-seven-color-mix {
     background: linear-gradient(
       90deg,
-      #ff9a9e 0%,    /* Pink */
-      #fecfef 16%,   /* Light Pink */
-      #fdcbf1 33%,   /* Lavender */
-      #a1c4fd 50%,   /* Soft Blue */
-      #c2e9fb 66%,   /* Cyan/Mint */
-      #d4fc79 83%,   /* Pale Lime */
-      #ffecd2 100%   /* Peach */
+      #0052d4 0%,    /* Dark Blue */
+      #4364f7 50%,   /* Medium Blue */
+      #6fb1fc 100%   /* Light Blue */
     );
   }
 
   .text-seven-color {
-    background: linear-gradient(90deg, #ff9a9e, #a1c4fd, #ffecd2);
+    background: linear-gradient(90deg, #0052d4, #6fb1fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -78,6 +74,6 @@
 
   /* Beautiful smooth shadow for luxury cards */
   .shadow-luxury {
-    box-shadow: 0 10px 40px -10px rgba(228, 155, 175, 0.15), 0 4px 6px -4px rgba(228, 155, 175, 0.05);
+    box-shadow: 0 10px 40px -10px rgba(67, 100, 247, 0.15), 0 4px 6px -4px rgba(67, 100, 247, 0.05);
   }
 }

@@ -23,7 +23,6 @@ export function AppLayout({ children }: { children: ReactNode }) {
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
     { href: "/models", label: "Models" },
-    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -159,7 +158,6 @@ export function AppLayout({ children }: { children: ReactNode }) {
                 <li><Link href="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
                 <li><Link href="/therapists" className="hover:text-primary transition-colors">Therapists & Models</Link></li>
                 <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-                <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
               </ul>
             </div>
             <div>

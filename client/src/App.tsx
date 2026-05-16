@@ -9,7 +9,6 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Models from "./pages/Models";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,7 +19,6 @@ function Router() {
       <Route path="/services" component={Services} />
       <Route path="/models" component={Models} />
       <Route path="/contact" component={Contact} />
-      <Route path="/blog" component={Blog} />
       <Route component={NotFound} />
     </Switch>
   );

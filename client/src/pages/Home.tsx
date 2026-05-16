@@ -235,10 +235,8 @@ export default function Home() {
               { icon: Heart, title: "Expert Care", desc: "Our models and therapists have years of experience in deep tissue and Swedish massage." },
               { icon: Sparkles, title: "Luxury Ambiance", desc: "Private, hygienic, and aesthetically pleasing rooms to elevate your mood instantly." }
             ].map((feature, idx) => (
-              <motion.div
-                key={idx}
                 whileHover={{ y: -5 }}
-                className="bg-secondary/50 p-8 rounded-3xl text-center shadow-luxury border border-white hover:border-pink-200 transition-all duration-300 group"
+                className="bg-secondary/50 p-8 rounded-3xl text-center shadow-luxury border border-white hover:border-blue-200 transition-all duration-300 group"
               >
                 <div className="w-16 h-16 mx-auto bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
                   <feature.icon className="w-8 h-8 text-primary" />
@@ -296,10 +294,10 @@ export default function Home() {
       </section>
 
       {/* Trust & Quality Section */}
-      <section className="py-24 bg-[#141412] text-white">
+      <section className="py-24 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[#e8c07d]">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-blue-100">
               Delhi NCR's Most Trusted Russian Spa Center
             </h2>
             <p className="text-gray-300 text-lg md:text-xl">
@@ -314,17 +312,17 @@ export default function Home() {
               { icon: Award, stat: "15+", title: "Certified Therapists", desc: "International Training" },
               { icon: Clock, stat: "24/7", title: "Always Open", desc: "Book Anytime" },
             ].map((item, idx) => (
-              <div key={idx} className="bg-[#1c1c1a] border border-[#e8c07d]/10 rounded-2xl p-8 text-center hover:border-[#e8c07d]/30 transition-colors">
-                <item.icon className="w-10 h-10 text-[#e8c07d] mx-auto mb-4" strokeWidth={1.5} />
-                <div className="text-4xl font-bold text-[#e8c07d] mb-2">{item.stat}</div>
-                <div className="font-bold text-white mb-1">{item.title}</div>
-                <div className="text-sm text-gray-400">{item.desc}</div>
+              <div key={idx} className="bg-blue-800/50 border border-blue-400/20 rounded-2xl p-8 text-center hover:border-blue-400/40 transition-colors">
+                <item.icon className="w-10 h-10 text-blue-200 mx-auto mb-4" strokeWidth={1.5} />
+                <div className="text-4xl font-bold text-white mb-2">{item.stat}</div>
+                <div className="font-bold text-blue-50 mb-1">{item.title}</div>
+                <div className="text-sm text-blue-200/80">{item.desc}</div>
               </div>
             ))}
           </div>
 
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h3 className="text-3xl md:text-4xl font-serif font-bold text-[#e8c07d]">
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-blue-100">
               Our Certifications & Quality Standards
             </h3>
           </div>
@@ -336,12 +334,12 @@ export default function Home() {
               { title: "Hygiene Excellence", desc: "Hospital-grade sanitation protocols and fresh linens every session" },
               { title: "Privacy Guaranteed", desc: "Individual treatment rooms with complete privacy and discretion" },
             ].map((item, idx) => (
-              <div key={idx} className="bg-[#1c1c1a] border border-[#e8c07d]/10 rounded-2xl p-6 hover:border-[#e8c07d]/30 transition-colors">
+              <div key={idx} className="bg-blue-800/50 border border-blue-400/20 rounded-2xl p-6 hover:border-blue-400/40 transition-colors">
                 <div className="flex items-start gap-4">
-                  <ShieldCheck className="w-6 h-6 text-[#e8c07d] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <ShieldCheck className="w-6 h-6 text-blue-200 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <h4 className="font-bold text-[#e8c07d] mb-2">{item.title}</h4>
-                    <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                    <h4 className="font-bold text-white mb-2">{item.title}</h4>
+                    <p className="text-sm text-blue-200/80 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               </div>
@@ -351,20 +349,20 @@ export default function Home() {
       </section>
 
       {/* SEO SECTION */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white border-t border-blue-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-gray-700">
             <h2 className="text-3xl font-serif font-bold mb-6 text-black">
-              The Best Russian Spa in Delhi NCR
+              Best Spa Center in NCR: Luxury Wellness in Delhi, Gurgaon & Mahipalpur
             </h2>
             <p className="mb-4 leading-relaxed">
-              Welcome to the ultimate destination for relaxation and rejuvenation. If you are looking for a premium <strong>Russian spa in Delhi</strong>, our center offers world-class services that blend traditional therapeutic techniques with modern luxury. We pride ourselves on providing an authentic experience designed to relieve stress and revitalize your body and mind.
+              Are you searching for the <strong>best spa center in NCR</strong>? Look no further. Our wellness sanctuary offers an unparalleled experience, establishing itself as the <strong>best spa center spa center in NCR Mahipalpur Gurgaon Delhi aLL OVER</strong>. We specialize in premium therapeutic treatments designed to melt away stress and restore your inner balance.
             </p>
             <p className="mb-4 leading-relaxed">
-              Conveniently located for travelers and residents alike, we are the most highly-rated <strong>spa in Mahipalpur</strong> and <strong>Russian spa in Mahipalpur</strong>. Whether you have just landed or are taking a break from a busy schedule, our center provides the perfect tranquil escape. We are also the top choice for guests seeking a luxurious <strong>Russian spa in aerocity</strong>, ensuring unmatched hospitality, privacy, and hygiene.
+              If you are looking for a top-rated <strong>spa center in Mahipalpur</strong>, we are conveniently located to serve both locals and travelers near the airport. Our <strong>spa center in Gurgaon</strong> provides a sophisticated escape for busy professionals seeking a moment of peace. For those in the capital, our <strong>spa center in Delhi</strong> stands out for its commitment to hygiene, luxury, and professional expertise.
             </p>
             <p className="mb-4 leading-relaxed">
-              Our elite wellness centers extend across the most exclusive neighborhoods. Experience true serenity at our luxurious <strong>Russian spa in vasant kunj</strong>, known for its elegant ambiance and professional therapists. For those in the heart of the city, our highly sought-after <strong>Russian spa in Dhaula Kuan</strong> offers bespoke massage treatments tailored specifically to your wellness needs. Book your appointment today and discover the finest standard of relaxation in the capital.
+              Whether it's a deep tissue massage, a relaxing Swedish session, or our signature Russian spa treatments, we ensure every guest receives personalized care. We are recognized as the <strong>best spa center in NCR</strong> because we combine traditional techniques with modern luxury. Our reach extends <strong>aLL OVER</strong> the region, bringing world-class wellness to your doorstep in Mahipalpur, Gurgaon, and Delhi. Book your session today at the most trusted <strong>spa center in Delhi NCR</strong>.
             </p>
           </div>
         </div>
