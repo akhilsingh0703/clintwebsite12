@@ -235,6 +235,8 @@ export default function Home() {
               { icon: Heart, title: "Expert Care", desc: "Our models and therapists have years of experience in deep tissue and Swedish massage." },
               { icon: Sparkles, title: "Luxury Ambiance", desc: "Private, hygienic, and aesthetically pleasing rooms to elevate your mood instantly." }
             ].map((feature, idx) => (
+              <motion.div
+                key={idx}
                 whileHover={{ y: -5 }}
                 className="bg-secondary/50 p-8 rounded-3xl text-center shadow-luxury border border-white hover:border-blue-200 transition-all duration-300 group"
               >
